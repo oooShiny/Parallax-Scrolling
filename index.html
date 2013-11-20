@@ -16,9 +16,8 @@
 
   <div id="main" role="main">
 
-	<!-- Section #1 / Intro -->
 	<section id="first" class="story" data-speed="8" data-type="background">
-		<div class="scrollingHeader" data-speed="8" data-type="background">
+		<div class="scrollingHeader" data-speed="2" data-type="background">
 			<div class="treeHeader">
 				<div class="stars">
 					<img src="http://www.calvin.edu/academic/phys/observatory/images/Astr110.Fall2005/Defrain-stars.jpg" />
@@ -33,23 +32,55 @@
 					<img id="rootLeft" src="http://wedding.ar-brown.net/sites/default/files/rootsErinSmall.png" />
 					<img id="rootRight" src="http://wedding.ar-brown.net/sites/default/files/rootsFlipAndySmall.png" />
 				</div>
+
+				<nav>
+					<a href="#welcome">Welcome</a>
+					<a href="#visitors">Visitors</a>
+					<a href="#registry">Registry</a>
+				</nav>
+<!-- Homepage/Welcome Section --> 					
+				<div class="info-block" id="welcome">
+					<h2><a name="welcome">Welcome</a></h2>
+					<p>We're finally getting married!</p>
+				</div>		
+
+<!-- Visitors Information Section --> 					
+				<div class="info-block" id="visitors">
+					<h2><a name="visitors">Visitors</a></h2>
+					<p>For those of you traveling from overseas, here's a sampling of American things to do while you're here.</p> 
+					<h2>Local Attractions</h2>
+					<ul>
+						<li><a href="http://www.visitnh.gov/" target="_blank">New Hampshire Website</a></li>
+						<li><a href="http://www.bostonusa.com/" target="_blank">Boston, MA</a></li>
+						<li><a href="http://www.portsmouthnh.com/visitors/" target="_blank">Portsmouth, NH</a></li>
+						<li><a href="http://www.portlandmaine.com/discover-portland/" target="_blank">Portland, ME</a></li>
+						<li><a href="http://www.bestbuy.com/site/mobile-cell-phones/no-contract-phones/abcat0801002.c?id=abcat0801002" target="_blank">Cell Phones and Sim Cards</a></li>
+					</ul>
+					<h2>Sports</h2>
+					<ul>
+						<li><a href="http://boston.redsox.mlb.com/" target="_blank">Boston Red Sox</a> (Baseball)</li>
+						<li><a href="http://www.patriots.com/" target="_blank">New England Patriots</a> (Football)</li>
+						<li><a href="http://bruins.nhl.com/" target="_blank">Boston Bruins</a> (Hockey)</li>
+						<li><a href="http://www.stubhub.com/sports-tickets/" target="_blank">Cheap(er) Tickets</a></li>
+					</ul>	
+				</div>
+
+<!-- Registry Section --> 					
+				<div class="info-block" id="registry">
+					<h2><a name="registry">Registry</a></h2>
+					<p>
+					<a href="http://www.myregistry.com/visitors/GiftList.aspx?param=1&sid=038e3543-b7e9-4bcd-acd8-71368195e305" target="_blank"><img src="http://images.myregistry.com/Images/MyRegistry/linktous/linktoregistry_landingpage_r1_c2.jpg" border="0"/></a>
+					</p>
+				</div>
+
 			</div>
 		</div>
-		<article>
-
-			
-	    </article>
 	</section>
 
 	<!-- Section #2 / Background Only 
-	<section id="second" class="story" data-speed="4" data-type="background">
+	<section id="visitors" class="story" data-speed="6" data-type="background">
 		<article>
-			<h2>Background Only</h2>
-		    	<p>In this section we are sliding the background at a different speed to the rest of the page.</p>
-		    	<p>As this text box is scrolling at the same speed as the page, and faster than the background, it creates this lovely parallax effect.</p>
-		    	<p>You can find all the HTML, CSS and the all important JavaScript files over at <a href="https://github.com/richardshepherd/Parallax-Scrolling">GitHub</a> - so why don't you drop by for some hardcore forking action?</p>
-		    	<p>Backgrounds for this article were taken from the May/June 2011 Smashing Magazine Desktop backgrounds.</p>	
-		    	<p>Head back to <a href="http://coding.smashingmagazine.com/2011/07/12/behind-the-scenes-of-nike-better-world/">Smashing Magazine</a>, or hop on over to <a href="http://richardshepherd.com">RichardShepherd.com</a>.</p>		
+				
 		</article>
 	</section>
 -->
@@ -96,6 +127,7 @@
   <!-- Our Javascript, starting with jQuery -->
   <script src='js/libs/jquery-1.6.1.min.js'></script>
   <script src="js/script.js"></script>
+  <script src='js/libs/detectmobilebrowser.js'></script>
   <script type="text/javascript">
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>

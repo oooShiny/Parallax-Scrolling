@@ -1,5 +1,8 @@
-article h2 { 
-	font-size: 60px; 
+body {
+	color: #93d338;
+}
+h2 { 
+	font-size: 30px; 
 	margin: 25px 0; 
 	line-height: 1em; 
 }
@@ -75,7 +78,20 @@ article h2 {
 	border-bottom: 1px solid rgba(0,0,0,0.4); 
 	box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
+.info-block {
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	top: -250px;
+}
 
+
+
+
+
+
+
+/* Parallax CSS */
 #first { background: #412e1d 50% 0; }
 #second { background: url(../images/slide2.jpg) 50% 0 no-repeat fixed; }
 #fourth { background: url(../images/slide3.jpg) 50% 0 no-repeat fixed; }
