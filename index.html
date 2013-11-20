@@ -32,12 +32,14 @@
 					<img id="rootLeft" src="http://wedding.ar-brown.net/sites/default/files/rootsErinSmall.png" />
 					<img id="rootRight" src="http://wedding.ar-brown.net/sites/default/files/rootsFlipAndySmall.png" />
 				</div>
-
-				<nav>
-					<a href="#welcome">Welcome</a>
-					<a href="#visitors">Visitors</a>
-					<a href="#registry">Registry</a>
-				</nav>
+<!-- Navigation -->
+				<div id="tab-container" class="tab-container">
+					<ul class="etabs">
+						<li class="tab"><a href="#welcome">Welcome</a></li>
+						<li class="tab"><a href="#visitors">Visitors</a></li>
+						<li class="tab"><a href="#registry">Registry</a></li>
+					</ul>
+				</div>
 <!-- Homepage/Welcome Section --> 					
 				<div class="info-block" id="welcome">
 					<h2><a name="welcome">Welcome</a></h2>
@@ -83,6 +85,11 @@
   <!-- Our Javascript, starting with jQuery -->
   <script src='js/libs/jquery-1.6.1.min.js'></script>
   <script src="js/script.js"></script>
+
+  <script src="js/easyTabs/vendor/jquery-1.7.1.min.js" type="text/javascript"></script> 
+  <script src="js/easyTabs/vendor/jquery.hashchange.min.js" type="text/javascript"></script>
+  <script src="js/easyTabs/lib/jquery.easytabs.min.js" type="text/javascript"></script>
+  
   <script src='js/libs/detectmobilebrowser.js'></script>
   <script type="text/javascript">
   <!--[if lt IE 7 ]>
