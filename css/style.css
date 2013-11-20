@@ -33,8 +33,10 @@ article h2 {
 .stars {
 	position: fixed;
 	opacity: 0;
-	top: 20px;
-	left: 20px;	
+	height: 251px;
+	width: 100%;
+	top: 0px;
+	overflow: hidden;
 }
 .dirt {
 	background: #412e1d;

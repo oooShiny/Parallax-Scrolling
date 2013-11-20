@@ -83,7 +83,7 @@ $(document).ready(function(){
 			
 			}; // in view
 		// fade stars in/out on scroll
-		if ($(this).scrollTop() > 100) {
+		if ($(this).scrollTop() > 500) {
 	        $(".stars").stop().animate({
 	            opacity: 1
 	        }, 700);
