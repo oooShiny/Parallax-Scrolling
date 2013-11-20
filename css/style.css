@@ -5,7 +5,7 @@ article h2 {
 }
 .scrollingHeader {
 	background: url('../images/skyBG2.gif') repeat-x;
-	height: 1000px;
+	height: 1500px;
 }
 .treeHeader { 
 	background-image: url('http://wedding.ar-brown.net/sites/default/files/grassB.png');
@@ -29,6 +29,12 @@ article h2 {
 	position: relative;
 	float: right;
 	padding-right: 6%;
+}
+.stars {
+	position: fixed;
+	opacity: 0;
+	top: 20px;
+	left: 20px;	
 }
 .dirt {
 	background: #412e1d;

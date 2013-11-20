@@ -32,7 +32,7 @@ $(document).ready(function(){
 		
 		// When the window is scrolled...
 	    $(window).scroll(function() {
-	
+
 			// If this section is in view
 			if ( ($window.scrollTop() + $window.height()) > (topOffset) &&
 				 ( (topOffset + $self.height()) > $window.scrollTop() ) ) {
@@ -82,9 +82,21 @@ $(document).ready(function(){
 				}); // video	
 			
 			}; // in view
+		// fade stars in/out on scroll
+		if ($(this).scrollTop() > 100) {
+	        $(".stars").stop().animate({
+	            opacity: 1
+	        }, 700);
+	    } else {
+	        $(".stars").stop().animate({
+	            opacity: 0
+	        }, 700);
+	    }
 	
 		}); // window scroll
 			
 	});	// each data-type
 
 }); // document ready
+
+
