@@ -40,11 +40,12 @@ h2 {
 	width: 100%;
 	top: 0px;
 	overflow: hidden;
+	background-image: url('../images/star-field.png');
+	background-repeat: repeat-x;
 }
 .dirt {
 	background: #412e1d;
 	position: fixed;
-	height: 562px;
 	width: 100%;
 	top: 281px;
 }
