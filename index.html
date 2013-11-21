@@ -10,6 +10,17 @@
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+    <!-- Our Javascript, starting with jQuery -->
+  <script src='js/libs/jquery-1.6.1.min.js'></script>
+  <script src="js/script.js"></script>
+  <script src='js/libs/navigation.js'></script>
+  <script src='js/libs/detectmobilebrowser.js'></script>
+  <script type="text/javascript">
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg");
+  <![endif]-->
+  </script>
 </head>
 
 <body>
@@ -32,22 +43,35 @@
 					<img id="rootLeft" src="http://wedding.ar-brown.net/sites/default/files/rootsErinSmall.png" />
 					<img id="rootRight" src="http://wedding.ar-brown.net/sites/default/files/rootsFlipAndySmall.png" />
 				</div>
-<!-- Navigation -->
-				<div id="tab-container" class="tab-container">
-					<ul class="etabs">
-						<li class="tab"><a href="#welcome">Welcome</a></li>
-						<li class="tab"><a href="#visitors">Visitors</a></li>
-						<li class="tab"><a href="#registry">Registry</a></li>
-					</ul>
-				</div>
+
+
+
+
+<!--
+   TABBED VIEW: HISTORY PAGE
+-->
+				<script>
+				        $(function() {
+				    
+				            $("#example-one").organicTabs();
+				   
+				        });
+				 </script>
+				<div id="example-one">
+				<ul class="nav">
+					<li class="nav-one"><a class="current" href="#welcome">Welcome</a></li>
+					<li class="nav-two"><a href="#visitors">Visitors</a></li>
+					<li class="nav-three"><a href="#registry">Registry</a></li>
+				</ul>
+
+				<div class="list-wrap">
 <!-- Homepage/Welcome Section --> 					
-				<div class="info-block" id="welcome">
+				<div id="welcome">
 					<h2><a name="welcome">Welcome</a></h2>
 					<p>We're finally getting married!</p>
-				</div>		
-
+				</div>
 <!-- Visitors Information Section --> 					
-				<div class="info-block" id="visitors">
+				<div class="hide" id="visitors">
 					<h2><a name="visitors">Visitors</a></h2>
 					<p>For those of you traveling from overseas, here's a sampling of American things to do while you're here.</p> 
 					<h2>Local Attractions</h2>
@@ -64,17 +88,17 @@
 						<li><a href="http://www.patriots.com/" target="_blank">New England Patriots</a> (Football)</li>
 						<li><a href="http://bruins.nhl.com/" target="_blank">Boston Bruins</a> (Hockey)</li>
 						<li><a href="http://www.stubhub.com/sports-tickets/" target="_blank">Cheap(er) Tickets</a></li>
-					</ul>	
+					</ul>
 				</div>
-
 <!-- Registry Section --> 					
-				<div class="info-block" id="registry">
+				<div class="hide" id="registry">
 					<h2><a name="registry">Registry</a></h2>
 					<p>
 					<a href="http://www.myregistry.com/visitors/GiftList.aspx?param=1&sid=038e3543-b7e9-4bcd-acd8-71368195e305" target="_blank"><img src="http://images.myregistry.com/Images/MyRegistry/linktous/linktoregistry_landingpage_r1_c2.jpg" border="0"/></a>
 					</p>
 				</div>
 
+<!-- END List Wrap --></div>
 			</div>
 		</div>
 	</section>
@@ -82,20 +106,6 @@
 
 
 
-  <!-- Our Javascript, starting with jQuery -->
-  <script src='js/libs/jquery-1.6.1.min.js'></script>
-  <script src="js/script.js"></script>
-
-  <script src="js/easyTabs/vendor/jquery-1.7.1.min.js" type="text/javascript"></script> 
-  <script src="js/easyTabs/vendor/jquery.hashchange.min.js" type="text/javascript"></script>
-  <script src="js/easyTabs/lib/jquery.easytabs.min.js" type="text/javascript"></script>
-  
-  <script src='js/libs/detectmobilebrowser.js'></script>
-  <script type="text/javascript">
-  <!--[if lt IE 7 ]>
-    <script src="js/libs/dd_belatedpng.js"></script>
-    <script>DD_belatedPNG.fix("img, .png_bg");
-  <![endif]-->
 
 </body>
 </html>
