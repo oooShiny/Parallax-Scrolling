@@ -4,11 +4,27 @@ body {
 h2 { 
 	font-size: 30px; 
 	margin: 25px 0; 
-	line-height: 1em; 
+	line-height: 0.5em; 
 }
-h2 a, a:hover {
+a, 
+a:hover,
+a:active,
+a:visited {
+	color: #38A8D3;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+h2 a, 
+h2 a:hover,
+h2 a:active,
+h2 a:visited {
 	color: #93d338;
+	text-decoration: none;
 }
+
 .scrollingHeader {
 	background: url('../images/skyBG2.gif') repeat-x;
 	height: 1500px;
@@ -157,11 +173,14 @@ h2 a, a:hover {
 #example-one .nav li a:hover { background-color: #111; }
 
 #example-one ul { list-style: none; }
-#example-one ul li a { display: block; border-bottom: 1px solid #666; padding: 4px; color: #666; }
-#example-one ul li a:hover { background: #fe4902; color: white; }
-#example-one ul li:last-child a { border: none; }
+
 
 #example-one ul li.nav-one a.current, #example-one ul.featured li a:hover { background-color: #0575f4; color: white; }
 #example-one ul li.nav-two a.current, #example-one ul.core li a:hover { background-color: #0575f4; color: white; }
 #example-one ul li.nav-three a.current, #example-one ul.jquerytuts li a:hover { background-color: #0575f4; color: white; }
 #example-one ul li.nav-four a.current, #example-one ul.classics li a:hover { background-color: #0575f4; color: white; }
+
+.tab-content {
+	float: left;
+	padding-right: 20px;
+}
