@@ -13,14 +13,137 @@
     <!-- Our Javascript, starting with jQuery -->
   <script src='js/libs/jquery-1.6.1.min.js'></script>
   <script src="js/script.js"></script>
-  <script src='js/libs/navigation.js'></script>
-  <script src='js/libs/detectmobilebrowser.js'></script>
+  <script type="text/javascript" src='js/libs/gmap3v5.1.1/gmap3.js'></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en">
   <script type="text/javascript">
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>
     <script>DD_belatedPNG.fix("img, .png_bg");
   <![endif]-->
   </script>
+
+<!-- Google Maps jQuery -->
+<script>
+	(function($) {
+
+    $.organicTabs = function(el, options) {
+    
+        var base = this;
+        base.$el = $(el);
+        base.$nav = base.$el.find(".nav");
+                
+        base.init = function() {
+        
+            base.options = $.extend({},$.organicTabs.defaultOptions, options);
+            
+            // Accessible hiding fix
+            $(".hide").css({
+                "position": "relative",
+                "top": 0,
+                "left": 0,
+                "display": "none"
+            }); 
+            
+            base.$nav.delegate("li > a", "click", function() {
+            
+                // Figure out current list via CSS class
+                var curList = base.$el.find("a.current").attr("href").substring(1),
+                
+                // List moving to
+                    $newList = $(this),
+                    
+                // Figure out ID of new list
+                    listID = $newList.attr("href").substring(1),
+                
+                // Set outer wrapper height to (static) height of current inner list
+                    $allListWrap = base.$el.find(".list-wrap"),
+                    curListHeight = $allListWrap.height();
+                $allListWrap.height(curListHeight);
+                                        
+                if ((listID != curList) && ( base.$el.find(":animated").length == 0)) {
+                                            
+                    // Fade out current list
+                    base.$el.find("#"+curList).fadeOut(base.options.speed, function() {
+                        
+                        // Fade in new list on callback
+                        base.$el.find("#"+listID).fadeIn(base.options.speed);
+                        
+                        // Adjust outer wrapper to fit new list snuggly
+                        var newHeight = base.$el.find("#"+listID).height();
+                        $allListWrap.animate({
+                            height: newHeight
+                        });
+                       
+                        $("#map_canvas").gmap3({
+							map:{
+							    options:{
+							      center:[42.7926, -71.21815],
+							      zoom: 8
+							    }
+							  },
+							  marker:{
+							    values:[
+							      {address: "5 Stone Post Road Salem, NH 03079", 
+							      data: "<div id='content'><h1 id='firstHeading' class='firstHeading'>Wedding Venue!</h1><div id='bodyContent'>5 Stone Post Road Salem, NH 03079</div></div>", options:{icon: "http://maps.google.com/mapfiles/marker_green.png"}},
+							      {address: "Portsmouth, NH 03801", data: "Portsmouth, NH", options:{icon: "http://maps.google.com/mapfiles/marker_brown.png"}},
+							      {address: "Portland, ME 04101", data: "Portland, ME", options:{icon: "http://maps.google.com/mapfiles/marker_brown.png"}}
+							    ],
+							    options:{
+							      draggable: false
+							    },
+							    events:{
+							      click: function(marker, event, context){
+							        var map = $(this).gmap3("get"),
+							          infowindow = $(this).gmap3({get:{name:"infowindow"}});
+							        if (infowindow){
+							          infowindow.open(map, marker);
+							          infowindow.setContent(context.data);
+							        } else {
+							          $(this).gmap3({
+							            infowindow:{
+							              anchor:marker, 
+							              options:{content: context.data}
+							            }
+							          });
+							        }
+							      },
+							    }
+							  },
+			                  autofit:{}
+
+                       });
+
+                        $('#map_canvas').gmap3({trigger:"resize"});
+
+                        // Remove highlighting - Add to just-clicked tab
+                        base.$el.find(".nav li a").removeClass("current");
+                        $newList.addClass("current");
+                            
+                    });
+                    
+                }   
+                
+                // Don't behave like a regular link
+                // Stop propegation and bubbling
+                return false;
+            });
+            
+        };
+        base.init();
+    };
+    
+    $.organicTabs.defaultOptions = {
+        "speed": 300
+    };
+    
+    $.fn.organicTabs = function(options) {
+        return this.each(function() {
+            (new $.organicTabs(this, options));
+        });
+    };
+    
+})(jQuery);
+</script>
 </head>
 
 <body>
@@ -44,11 +167,8 @@
 					<img id="rootRight" src="http://wedding.ar-brown.net/sites/default/files/rootsFlipAndySmall.png" />
 				</div>
 
-
-
-
 <!--
-   TABBED VIEW: HISTORY PAGE
+   TABBED PAGES
 -->
 				<script>
 				        $(function() {
@@ -57,6 +177,7 @@
 				   
 				        });
 				 </script>
+
 				<div id="example-one">
 				<ul class="nav">
 					<li class="nav-one"><a class="current" href="#welcome">Welcome</a></li>
@@ -93,6 +214,11 @@
 							<li><a href="http://www.stubhub.com/sports-tickets/" target="_blank">Cheap(er) Tickets</a></li>
 						</ul>
 					</div>
+					<div class="tab-content">
+					
+					<div id="map_canvas"></div>
+					
+					</div>
 				</div>
 <!-- Registry Section --> 					
 				<div class="hide" id="registry">
@@ -107,7 +233,6 @@
 		</div>
 	</section>
   </div> <!-- // End of #main -->
-
 
 
 

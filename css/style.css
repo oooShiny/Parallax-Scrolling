@@ -99,13 +99,12 @@ h2 a:visited {
 	border-bottom: 1px solid rgba(0,0,0,0.4); 
 	box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
-.info-block {
-	position: relative;
-	width: 1024px;
-	margin: 0 auto;
-	top: -250px;
-}
 
+/* Google Map Size */
+#map_canvas{
+	width: 500px;
+	height: 400px;
+}
 
 /* Parallax CSS */
 #first { background: #412e1d 50% 0; }
