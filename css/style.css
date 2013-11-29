@@ -100,10 +100,19 @@ h2 a:visited {
 	box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
 
-/* Google Map Size */
+/* Google Map Styles */
 #map_canvas{
 	width: 500px;
 	height: 400px;
+}
+
+.map-content {
+	min-width: 50px;
+	min-height: 50px;
+}
+.firstHeading,
+.bodyContent {
+	color: black;
 }
 
 /* Parallax CSS */
