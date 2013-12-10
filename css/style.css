@@ -30,7 +30,7 @@ h2 a:visited {
 	height: 1500px;
 }
 .treeHeader { 
-	background-image: url('http://wedding.ar-brown.net/sites/default/files/grassB.png');
+	background-image: url('../images/grassB.png');
 	background-repeat: repeat-x;
 	background-position: bottom;
 	position: fixed;
